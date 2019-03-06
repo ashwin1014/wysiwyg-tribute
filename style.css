@@ -149,3 +149,8 @@ div#emailContent{
 .list-group-item:first-child{
     border-radius: 0;
 }
+
+.vl {
+    border-left: 1px solid #DDD;
+    height: 50px;
+  }
