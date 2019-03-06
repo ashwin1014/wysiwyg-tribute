@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WYSIWYG</title>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+    <link rel="stylesheet" href="node_modules/tribute/tribute.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+        <h3>WYSIWYG Editor</h3>
+    <div id="wysiwygEditor">
+        <div id="commandHolder">
+            <button class="btn btn-default" data-toggle="tooltip" title="Bold" data-command="bold" id="text-bold" onclick="executeEditorCommand(this)"><i class="fa fa-bold" aria-hidden="true"></i></button>
+            <button class="btn btn-default" data-toggle="tooltip" title="Italic" data-command="italic" id="text-italic" onclick="executeEditorCommand(this)"><i class="fa fa-italic" aria-hidden="true"></i></button>
+            <button class="btn btn-default" data-toggle="tooltip" title="Underline" data-command="underline" id="text-underline" onclick="executeEditorCommand(this)"><i class="fa fa-underline" aria-hidden="true"></i></button>
+            <button class="btn btn-default" data-toggle="tooltip" title="Unordered list" data-command="insertUnorderedList" id="text-unorderedList" onclick="executeEditorCommand(this)"><i class="fa fa-list-ul" aria-hidden="true"></i></button>
+            <button class="btn btn-default" data-toggle="tooltip" title="Ordered List" data-command="insertOrderedList" id="text-OrderedList" onclick="executeEditorCommand(this)"><i class="fa fa-list-ol" aria-hidden="true"></i></button>
+            <button class="btn btn-default" data-toggle="tooltip" title="Undo" data-command="undo" id="text-undo" onclick="executeEditorCommand(this)"><i class="fa fa-undo" aria-hidden="true"></i></button>
+            <button class="btn btn-default" data-toggle="tooltip" title="Redo" data-command="redo" id="text-redo" onclick="executeEditorCommand(this)"><i class="fa fa-repeat" aria-hidden="true"></i></button>
+            <div class="dropdown" data-toggle="tooltip" title="Font family">
+                <button class="btn btn-default dropdown-toggle" id="fontList" style="height: 100%;" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><i class="fa fa-font" aria-hidden="true"></i><span class="caret"></span></button>
+                <ul class="dropdown-menu" aria-labelledby="fontList">                      
+                </ul>
+            </div>
+        </div>
+        <div contenteditable="true" class="form-control" id="emailContent" onkeydown="onContentKeydown(event)" onkeyup="onContentKeyup(event)"></div>
+    </div>
+</div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> 
+    <script src="node_modules/tribute/tribute.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
