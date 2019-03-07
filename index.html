@@ -14,38 +14,54 @@
 </head>
 <body>
 
-<div class="container">
+<div class="ed-container">
+   <div style="margin: 0 auto;">
         <h3>WYSIWYG Editor</h3>
-    <div id="wysiwygEditor">
-        <div id="commandHolder">
-            <button class="btn btn-default" data-toggle="tooltip" title="Bold" data-command="bold" id="text-bold" onclick="executeEditorCommand(this)"><i class="fa fa-bold" aria-hidden="true"></i></button>
-            <button class="btn btn-default" data-toggle="tooltip" title="Italic" data-command="italic" id="text-italic" onclick="executeEditorCommand(this)"><i class="fa fa-italic" aria-hidden="true"></i></button>
-            <button class="btn btn-default" data-toggle="tooltip" title="Underline" data-command="underline" id="text-underline" onclick="executeEditorCommand(this)"><i class="fa fa-underline" aria-hidden="true"></i></button>
-            <div class="dropdown" data-toggle="tooltip" title="Font family">
-                <button class="btn btn-default dropdown-toggle" id="fontList" style="height: 100%;" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><i class="fa fa-font" aria-hidden="true"></i><span class="caret"></span></button>
-                <ul class="dropdown-menu" aria-labelledby="fontList">                      
-                </ul>
+        <div id="wysiwygEditor">
+            <div id="commandHolder">
+                <button class="btn btn-default" data-toggle="tooltip" title="Bold" data-command="bold" id="text-bold" onclick="executeEditorCommand(this)"><i class="fa fa-bold" aria-hidden="true"></i></button>
+                <button class="btn btn-default" data-toggle="tooltip" title="Italic" data-command="italic" id="text-italic" onclick="executeEditorCommand(this)"><i class="fa fa-italic" aria-hidden="true"></i></button>
+                <button class="btn btn-default" data-toggle="tooltip" title="Underline" data-command="underline" id="text-underline" onclick="executeEditorCommand(this)"><i class="fa fa-underline" aria-hidden="true"></i></button>
+                <div class="dropdown" data-toggle="tooltip" title="Font family">
+                    <button class="btn btn-default dropdown-toggle" id="fontList" style="height: 100%;" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><i class="fa fa-font" aria-hidden="true"></i><span class="caret"></span></button>
+                    <ul class="dropdown-menu" aria-labelledby="fontList">                      
+                    </ul>
+                </div>
+                <div class="vl"></div>
+                <button class="btn btn-default" data-toggle="tooltip" title="Unordered list" data-command="insertUnorderedList" id="text-unorderedList" onclick="executeEditorCommand(this)"><i class="fa fa-list-ul" aria-hidden="true"></i></button>
+                <button class="btn btn-default" data-toggle="tooltip" title="Ordered List" data-command="insertOrderedList" id="text-OrderedList" onclick="executeEditorCommand(this)"><i class="fa fa-list-ol" aria-hidden="true"></i></button>
+                <div class="dropdown" data-toggle="tooltip" title="Align">
+                    <button class="btn btn-default dropdown-toggle" id="alignment" style="height: 100%;" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><i class="fa fa-align-justify" aria-hidden="true"></i><span class="caret"></span></button>
+                    <ul class="dropdown-menu" aria-labelledby="alignment">  
+                        <button type="button" onclick="executeEditorCommand(this)"  data-toggle="tooltip" title="Align left" data-command="justifyLeft" class="list-group-item"><i class="fa fa-align-left" aria-hidden="true"></i></button>                  
+                        <button type="button" onclick="executeEditorCommand(this)"  data-toggle="tooltip" title="Align right" data-command="justifyRight" class="list-group-item"><i class="fa fa-align-right" aria-hidden="true"></i></button>                  
+                        <button type="button" onclick="executeEditorCommand(this)"  data-toggle="tooltip" title="Align center" data-command="justifyCenter" class="list-group-item"><i class="fa fa-align-center" aria-hidden="true"></i></button>                  
+                        <button type="button" onclick="executeEditorCommand(this)"  data-toggle="tooltip" title="Align justify" data-command="justifyFull" class="list-group-item"><i class="fa fa-align-justify" aria-hidden="true"></i></button>                  
+                    </ul>
+                </div>
+              
+                <div class="vl"></div>
+                <button class="btn btn-default" data-toggle="tooltip" title="Undo" data-command="undo" id="text-undo" onclick="executeEditorCommand(this)"><i class="fa fa-undo" aria-hidden="true"></i></button>
+                <button class="btn btn-default" data-toggle="tooltip" title="Redo" data-command="redo" id="text-redo" onclick="executeEditorCommand(this)"><i class="fa fa-repeat" aria-hidden="true"></i></button>
+                <div class="vl"></div> 
+                <div class="dropdown" data-toggle="tooltip" title="Insert link">
+                    <button class="btn btn-default dropdown-toggle" style="height: 100%;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"  id="add-link" ><i class="fa fa-link" aria-hidden="true"></i></button>
+                    <ul class="dropdown-menu" aria-labelledby="add-link">
+                        <li>
+                            <div class="form-group paddinglr-5px">
+                                    <label for="usr">Enter Url:</label>
+                                    <input type="text" class="form-control" id="link" style="border-radius: 0" autocomplete="false">
+                                    <button class="btn btn-link float-r" id="inserLinkBtn">Insert</button>
+                            </div>
+                        </li>                
+                    </ul>
+                </div>
+                <button class="btn btn-default" data-toggle="tooltip" title="Remove link" data-command="unlink" id="remove-link" onclick="executeEditorCommand(this)"><i class="fa fa-chain-broken" aria-hidden="true"></i></button>        
+                <div class="vl"></div>
             </div>
-            <div class="vl"></div>
-            <button class="btn btn-default" data-toggle="tooltip" title="Unordered list" data-command="insertUnorderedList" id="text-unorderedList" onclick="executeEditorCommand(this)"><i class="fa fa-list-ul" aria-hidden="true"></i></button>
-            <button class="btn btn-default" data-toggle="tooltip" title="Ordered List" data-command="insertOrderedList" id="text-OrderedList" onclick="executeEditorCommand(this)"><i class="fa fa-list-ol" aria-hidden="true"></i></button>
-            <div class="dropdown" data-toggle="tooltip" title="Align">
-                <button class="btn btn-default dropdown-toggle" id="alignment" style="height: 100%;" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><i class="fa fa-align-justify" aria-hidden="true"></i><span class="caret"></span></button>
-                <ul class="dropdown-menu" aria-labelledby="alignment">  
-                    <button type="button" onclick="executeEditorCommand(this)"  data-toggle="tooltip" title="Align left" data-command="justifyLeft" class="list-group-item"><i class="fa fa-align-left" aria-hidden="true"></i></button>                  
-                    <button type="button" onclick="executeEditorCommand(this)"  data-toggle="tooltip" title="Align right" data-command="justifyRight" class="list-group-item"><i class="fa fa-align-right" aria-hidden="true"></i></button>                  
-                    <button type="button" onclick="executeEditorCommand(this)"  data-toggle="tooltip" title="Align center" data-command="justifyCenter" class="list-group-item"><i class="fa fa-align-center" aria-hidden="true"></i></button>                  
-                    <button type="button" onclick="executeEditorCommand(this)"  data-toggle="tooltip" title="Align justify" data-command="justifyFull" class="list-group-item"><i class="fa fa-align-justify" aria-hidden="true"></i></button>                  
-                </ul>
-            </div>
-          
-            <div class="vl"></div>
-            <button class="btn btn-default" data-toggle="tooltip" title="Undo" data-command="undo" id="text-undo" onclick="executeEditorCommand(this)"><i class="fa fa-undo" aria-hidden="true"></i></button>
-            <button class="btn btn-default" data-toggle="tooltip" title="Redo" data-command="redo" id="text-redo" onclick="executeEditorCommand(this)"><i class="fa fa-repeat" aria-hidden="true"></i></button>
-            <div class="vl"></div>         
+            <div contenteditable="true" class="form-control" id="emailContent" onkeydown="onContentKeydown(event)" onkeyup="onContentKeyup(event)"></div>
         </div>
-        <div contenteditable="true" class="form-control" id="emailContent" onkeydown="onContentKeydown(event)" onkeyup="onContentKeyup(event)"></div>
-    </div>
+   </div>
 </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> 

@@ -5,7 +5,7 @@ window.onload = function() {
 };
 
 
-const fontFamily = ['Georgia', 'Times New Roman', 'Arial', 'Comic Sans MS', 'Tahoma', 'Trebuchet MS', 'Verdana','Courier New','Roboto'];
+const fontFamily = ['Georgia', 'Times New Roman', 'Arial', 'Comic Sans MS', 'Tahoma', 'Trebuchet MS', 'Verdana','Courier New','Roboto', 'Helvetica', 'Palatino', 'Garamond', 'Impact'];
 let fontDropDownList = '';
 let combinedArray = [];
 
@@ -83,16 +83,14 @@ const onContentKeydown = debounce(function(e) {
     addVariableHeaders();
     document.querySelectorAll('.tribute-container ul li')[0].classList.add('highlight');
   }
-
-},150);
+},200);
 
 const onContentKeyup = debounce(function(e) {
    if(e.key === 'Backspace' && document.querySelectorAll('.tribute-container .header').length === 0 && document.querySelectorAll('.tribute-container ul li').length === combinedArray.length){
       addVariableHeaders();
       document.querySelectorAll('.tribute-container ul li')[0].classList.add('highlight');
    }
-
-},150);
+},200);
 
 
 const addFonts = function() {
@@ -116,6 +114,11 @@ const addVariableHeaders = function() {
   document.querySelector('.tribute-container').children[0].insertBefore(standardVariableHeader, document.querySelector('.tribute-container').children[0].childNodes[12]);
   document.querySelector('.tribute-container').scrollTop = 0;
 };
+
+document.querySelector('#inserLinkBtn').addEventListener('click', function(){
+  let val = document.querySelector('#link').value;
+  document.execCommand('createLink', false, val);
+});
 
 
 var tribute = new Tribute({

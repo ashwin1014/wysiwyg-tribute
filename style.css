@@ -154,3 +154,11 @@ div#emailContent{
     border-left: 1px solid #DDD;
     height: 50px;
   }
+.float-r{
+    float: right;
+}
+
+.ed-container{
+    margin: 0 auto;
+    display: flex;
+}
