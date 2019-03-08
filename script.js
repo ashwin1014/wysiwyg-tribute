@@ -95,7 +95,7 @@ const onContentKeyup = debounce(function(e) {
 
 const addFonts = function() {
     fontFamily.sort().map(function(ele){
-      fontDropDownList+='<button type="button" onclick="executeEditorCommand(this)" data-command="fontName" data-font="'+ele+'" class="list-group-item">'+ele+'</button>';
+      fontDropDownList+='<button type="button" onclick="executeEditorCommand(this)" data-command="fontName" data-font="'+ele+'" class="list-group-item" style="font-family:'+ele+'">'+ele+'</button>';
     });
    document.querySelector('.dropdown-menu').innerHTML = fontDropDownList;
 };
